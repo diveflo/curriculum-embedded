@@ -35,6 +35,11 @@ jobs:
       with:
         # Gradle command line arguments, see gradle --help
         arguments: buildDocs
+    - name: Upload PDFs as Build Artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: documents
+        path: ./docs-ext
 
     # do the following two things only for a release!
     - name: Set Environment Variables for Release Version
